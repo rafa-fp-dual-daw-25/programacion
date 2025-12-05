@@ -1,0 +1,57 @@
+<<<<<<< HEAD
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+=======
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+>>>>>>> e598bcc (parte Eclipse)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+<<<<<<< HEAD
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+=======
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+>>>>>>> e598bcc (parte Eclipse)
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+<<<<<<< HEAD
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+=======
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+>>>>>>> e598bcc (parte Eclipse)

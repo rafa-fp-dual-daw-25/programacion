@@ -1,0 +1,54 @@
+Matrices:
+
+1. Crea un programa que llene una matriz de 2x2 con números ingresados por
+el usuario y luego imprima todos los elementos.
+
+2. Crea una función sumMatrix() que sume los elementos de una matriz y
+devuelva la suma.
+
+3. Escribe una función que se llame sumRow y devuelva en un array la suma
+de cada fila.
+
+4. Lo mismo que el anterior, pero por cada columna.
+
+5. Crea una función que se le pasa una matriz como argumento y tiene que
+devolver la misma matriz, pero cambiando la primera fila por la última.
+Además, todos los elementos pares de la matriz deben de volverse
+impares.
+
+6. Crea una función que recorra una matriz y devuelva en un array el número
+mayor y el menor.
+
+7. Crea una función que devuelva en un array todos los elementos que están
+por encima de la diagonal principal.
+
+8. Crea una función que dada una matriz devuelva la transpuesta. (Ya lo
+hemos hecho pero puede repetirse ☺ )
+
+
+
+Arrays:
+
+1. Crea una función que dado un array devuelve el mismo array con sus
+elementos multiplicados por 2.
+
+2. Crea una función que se llame generateArray(String parImpar) que se le
+pasa como parámetro un string que puede contener la palabra par o impar.
+
+Si tiene otra palabra que no sea una de esa devuelve un array vacio. Si la
+palabra es par devuelve los primeros 20 numeros pares en un array. Si es
+impar devuelve los primeros 20 números impares.
+
+3. Crea una función que dado un array devuelve el mismo array, pero inverso.
+
+4. Crea una función que dado un entero como argumento devuelva un array
+de las mismas posiciones con números random.
+
+
+
+Lógica:
+1. Crea una función getRandom(int num) que dado un array de enteros los devuelva ordenados de
+menor a mayor.
+
+2. Crea una función enteros(int[] array) que, pasados un total de bytes, devuelva los Terabytes,
+Gigabytes, Megabytes, Kilobytes y bytes que hay.

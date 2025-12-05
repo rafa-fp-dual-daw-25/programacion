@@ -1,0 +1,5 @@
+Secuencia creciente: Pide al usuario que ingrese una serie de números hasta que ingrese un cero. Detecta y cuenta todas las subsecuencias de al menos 3 números consecutivos que estén en orden creciente.
+
+Patrones de dígitos: Recibe un número entero de al menos 10 dígitos y determina la longitud de la mayor subsecuencia de dígitos consecutivos pares.
+
+Temperaturas diarias: Recibe temperaturas diarias de un mes. Encuentra la racha más larga de días consecutivos con temperatura superior a 30°C.

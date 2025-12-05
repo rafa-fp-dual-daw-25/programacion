@@ -1,0 +1,17 @@
+Cuando acabes, busca otra API Rest pública que puedas consultar. Mira un poco
+su documentación y entiende cómo funciona.
+
+Tareas
+1. Levanta una FastAPI como hemos hecho en anteriores proyectos.
+
+2. En la raíz de tu API “/” debería de poner la URL de tu API Rest pública elegida y como va a funcionar el siguiente punto.
+
+3. Crea un endPoint “/petición” para que otras personas puedan interactuar con esta API. Te pongo el ejemplo con RickYMorty.
+
+	o Sabemos que la API de RickYMorty en esta URL: https://rickandmortyapi.com/api/character
+
+	o Si en cambio, lees algo más la DOC sabrás que https://rickandmortyapi.com/api/character/1 devolverá solo los datos del personaje con ID número 1, en este caso Rick.
+
+	o Quiero que en /petición por método POST se te envíe un dato clave para poder filtrar algún personaje, ubicación o algo de tu API rest. Especifica en “/” cómo funciona “/petición” y que opciones tiene el usuario.
+
+	o Con el ejemplo de RickYMorty el usuario podría enviarte un “1” y tu tendrías que devolverle el contenido de Rick llamando a: https://rickandmortyapi.com/api/character/1

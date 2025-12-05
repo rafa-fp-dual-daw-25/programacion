@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rick & Morty — Personajes</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Personajes de Rick & Morty</h1>
+  <div>
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+  </div>
+  <table id="charactersTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Status</th>
+        <th>Especie</th>
+        <th>Genero</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- aquí insertaremos los <tr> dinámicamente -->
+    </tbody>
+  </table>
+
+  <script>
+    const apiBase = "https://rickandmortyapi.com/api/character";
+    let currentPageUrl = apiBase;
+
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const tbody = document.querySelector("#charactersTable tbody");
+
+    async function fetchPage(url) {
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) {
+          throw new Error("Error en la petición: " + resp.status);
+        }
+        const data = await resp.json();
+        return data;
+      } catch (err) {
+        console.error("Error al obtener datos:", err);
+        return null;
+      }
+    }
+
+    function renderCharacters(results) {
+      // limpiar tabla anterior
+      tbody.innerHTML = "";
+
+      results.forEach(char => {
+        const tr = document.createElement("tr");
+
+        // ID
+        const tdId = document.createElement("td");
+        tdId.textContent = char.id;
+        tr.appendChild(tdId);
+
+        // Nombre
+        const tdName = document.createElement("td");
+        tdName.textContent = char.name;
+        tr.appendChild(tdName);
+
+        // Status
+        const tdStatus = document.createElement("td");
+        tdStatus.textContent = char.status;
+        tr.appendChild(tdStatus);
+
+        // Especie
+        const tdSpecies = document.createElement("td");
+        tdSpecies.textContent = char.species;
+        tr.appendChild(tdSpecies);
+
+        // Género
+        const tdGender = document.createElement("td");
+        tdGender.textContent = char.gender;
+        tr.appendChild(tdGender);
+
+        // Imagen
+        const tdImage = document.createElement("td");
+        const img = document.createElement("img");
+        img.src = char.image;
+        img.alt = char.name;
+        img.style.width = "50px";
+        tdImage.appendChild(img);
+        tr.appendChild(tdImage);
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function loadPage(url) {
+      const data = await fetchPage(url);
+      if (!data) {
+        return;
+      }
+      renderCharacters(data.results);
+
+      // actualizar los botones prev/next
+      prevBtn.disabled = !data.info.prev;
+      nextBtn.disabled = !data.info.next;
+
+      // actualizar URL actual
+      currentPageUrl = url;
+
+      // almacenar las URLs prev y next para usarlas en los botones
+      prevBtn.dataset.url = data.info.prev;
+      nextBtn.dataset.url = data.info.next;
+    }
+
+    // manejadores de eventos
+    prevBtn.addEventListener("click", () => {
+      const url = prevBtn.dataset.url;
+      if (url) {
+        loadPage(url);
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const url = nextBtn.dataset.url;
+      if (url) {
+        loadPage(url);
+      }
+    });
+
+    // al cargar la página, cargar la primera
+    window.addEventListener("DOMContentLoaded", () => {
+      loadPage(currentPageUrl);
+    });
+  </script>
+</body>
+</html>
